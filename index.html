@@ -1,76 +1,138 @@
-       <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shifa Ayurveda - 100% प्राकृतिक आयुर्वेदिक समाधान</title>
+    <meta name="description" content="100% प्राकृतिक आयुर्वेदिक समाधान - शुद्ध हर्बल उत्पादों के साथ आपके स्वास्थ्य का विश्वसनीय स्रोत">
+    <title>Herbal Health Care Habib Shifa Khana - प्राकृतिक स्वास्थ्य समाधान</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #1B5E20;
+            --secondary-color: #2E7D32;
+            --accent-color: #FFC107;
+            --text-dark: #2D3436;
+            --text-light: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
 
         body {
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path fill="%23ffffff10" d="M50 0L100 50 50 100 0 50z"/></svg>');
+            opacity: 0.1;
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            font-size: .7rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation */
         .nav {
-            background: #1B5E20;
+            background: var(--primary-color);
             padding: 1rem;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
-        .nav ul {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
             list-style: none;
             display: flex;
-            justify-content: center;
             gap: 2rem;
+            transition: var(--transition);
         }
 
-        .nav a {
-            color: white;
+        .nav-link {
+            color: var(--text-light);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            position: relative;
         }
 
-        .nav a:hover,
-        .nav a.active {
-            background: #2E7D32;
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+            left: 0;
         }
 
         .hamburger {
             display: none;
-            cursor: pointer;
             color: white;
             font-size: 1.5rem;
+            cursor: pointer;
         }
 
-        .header {
-            background-color: #2E7D32;
-            background-color: #2E7D32;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-	.tagline {
-            color: #FFEB3B;
-            font-size: 1rem;
-            margin: 0.5rem 0;
-	
-	       }
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -361,270 +423,109 @@
             display: block;
         }
     }
+.galery {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+ .galery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .galery:hover {
+            transform: translateY(-5px);
+	
+        }
+	 /* Admin Panel Styles */
+        .admin-panel {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .admin-mode .delete-btn {
+            display: block;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header class="header">
-                <h1>SHIFA AYURVEDA</h1>
+        <h1>Herbal Health Care </h1>
         <p class="tagline">No Chemical | No side-effect | 100% Ayurvedic</p>
     </header>
 
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <ul id="navMenu">
-            <li><a href="#home" class="active">होम</a></li>
-            <li><a href="#products">उत्पाद</a></li>
-            <li><a href="#about">हमारे बारे में</a></li>
-            <li><a href="#contact-info">संपर्क</a></li>
-        </ul>
-    </nav>
-
-    <div class="container" id="products">
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="product1.jpg" alt="शाही पट्टी" class="product-image">
-                <h3 class="product-title">🧻 शाही पट्टी - पुरुषों की सभी समस्याओं के लिए</h3>
-                <p>✅ साइज बढ़ाने, टेढ़ापन दूर करने और कठोरता बढ़ाने में सहायक</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 1150 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 850 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=शाही%20पट्टी%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="product2.jpg" alt="लॉन्ग टाइम सेक्स शादी कोर्स" class="product-image">
-                <h3 class="product-title">🩺 लॉन्ग टाइम सेक्स (शादी कोर्स)</h3>
-                <p>✅ बचपन की गलतियों से आई कमजोरी को दूर कर संपूर्ण पुरुष बनाएं</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 4000 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2250 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=लॉन्ग%20टाइम%20शादी%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="product3.jpg" alt="लॉन्ग टाइम कोर्स" class="product-image">
-                <h3 class="product-title">🩺 लॉन्ग टाइम कोर्स (5 आइटम पैक)</h3>
-                <p>✅ सिर्फ टाइमिंग समस्या के लिए</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 3000 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2500 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=लॉन्ग%20टाइम%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="product4.jpg" alt="30 हस्तमैथुन कोर्स" class="product-image">
-                <h3 class="product-title">🩺  हस्तमैथुन से आई कमजोरी कोर्स</h3>
-                <p>✅ कमजोरी दूर करने का गारंटीड उपाय</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 3500 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2850 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=30%20हस्तमैथुन%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <img src="product5.jpg" alt="मुगलज़ शाही गोल्ड" class="product-image">
-                <h3 class="product-title">🩺  मुगलज़ शाही गोल्ड</h3>
-                <p>✅ 8 साल पुराना आजमाया हुआ कोर्स</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 3000 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2500 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=मुगलज़%20शाही%20गोल्ड%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <img src="product6.jpg" alt="स्पर्म कोर्स" class="product-image">
-                <h3 class="product-title">🩺  स्पर्म कोर्स</h3>
-                <p>✅ निसंतान दंपतियों के लिए विशेष उपचार</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 4000 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 3000 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=स्पर्म%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="product-card">
-                <img src="product7.jpg" alt="अक्सीर शबाब कोर्स" class="product-image">
-                <h3 class="product-title">🩺  अक्सीर शबाब कोर्स</h3>
-                <p>✅ यौन शक्ति में वृद्धि का रहस्य</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 3250 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2250 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=अक्सीर%20शबाब%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="product-card">
-                <img src="product8.jpg" alt="शाही नवाबी शादी कोर्स" class="product-image">
-                <h3 class="product-title">🩺  शाही नवाबी शादी कोर्स</h3>
-                <p>✅ शाही अनुभव के लिए विशेष फॉर्मूला</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 4000 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 3000 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=शाही%20नवाबी%20शादी%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 9 -->
-            <div class="product-card">
-                <img src="product9.jpg" alt="टॉप पावर शबीयर कोर्स" class="product-image">
-                <h3 class="product-title">🩺  टॉप पावर शबीयर शादी कोर्स</h3>
-                <p>✅ अद्वितीय शक्ति और सहनशक्ति विकास</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 2800 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2000 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=टॉप%20पावर%20शबीयर%20कोर्स%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-               
-<!-- Product 11 -->
-            <div class="product-card">
-                <img src="product10.jpg" alt="परलुफ्त जवानी कोर्स 01" class="product-image">
-                <h3 class="product-title">🩺  लुफ्त जवानी कोर्स</h3>
-                <p>✅ यौन स्वास्थ्य में सुधार का विशेष कार्यक्रम</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 2500 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 2000 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=परलुफ्त%20जवानी%20कोर्स%2001%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 12 -->
-            <div class="product-card">
-                <img src="product11.jpg" alt="स्टैमिना बूस्टर पाउडर" class="product-image">
-                <h3 class="product-title">🩺  स्टैमिना बूस्टर पाउडर</h3>
-                <p>✅ ऊर्जा और सहनशक्ति में तत्काल वृद्धि</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 1300 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 900 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=स्टैमिना%20बूस्टर%20पाउडर%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 13 -->
-            <div class="product-card">
-                <img src="product12.jpg" alt="तिलाः सांडा" class="product-image">
-                <h3 class="product-title">🩺  तिलाः सांडा</h3>
-                <p>✅ लिंग के आकार और टेढ़ेपन को ठीक करने के लिए गारंटीड उपाय</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 750 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 550 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=तिलाः%20सांडा%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 14 -->
-            <div class="product-card">
-                <img src="product13.jpg" alt="टाइमिंग गोल्डन कैप्सूल" class="product-image">
-                <h3 class="product-title">🩺  टाइमिंग गोल्डन कैप्सूल</h3>
-                <p>✅ सेक्स टाइमिंग बढ़ाने के लिए 60 कैप्सूल</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 1300 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 950 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=टाइमिंग%20गोल्डन%20कैप्सूल%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 15 -->
-            <div class="product-card">
-                <img src="product14.jpg" alt="महिलाओं की योनि टाइट करने का उपाय" class="product-image">
-                <h3 class="product-title">🩺  महिलाओं की ढीली योनि टाइट करने का उपाय</h3>
-                <p>✅ सेक्स से 20 मिनट पहले तेल लगाएं और फर्क देखें</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 1350 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 850 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=महिलाओं%20की%20योनि%20टाइट%20उपाय%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 16 -->
-            <div class="product-card">
-                <img src="product15.jpg" alt="महिलाओं के स्तन और कूल्हे टाइट करने का उपाय" class="product-image">
-                <h3 class="product-title">🩺  महिलाओं के स्तन और कूल्हे टाइट करने का उपाय</h3>
-                <p>✅ माजून, कैप्सूल और जेल का कॉम्बो पैक</p>
-                <div class="price">
-                    <span class="original-price">असली कीमत: 2000 रुपये</span><br>
-                    <span class="discounted-price">डिस्काउंट के बाद: 1500 रुपये</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=महिलाओं%20के%20स्तन%20टाइट%20उपाय%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
-
-            <!-- Product 17 (Habib Shahi Halwa) -->
-            <div class="product-card">
-                <img src="product16.jpg" alt="हबीब शाही हलवा" class="product-image">
-                <h3 class="product-title">🍯 हबीब शाही हलवा</h3>
-                <p>✅ 8 साल पुराना आजमाया हुआ फॉर्मूला</p>
-                <div class="price">
-                    <span class="discounted-price">कीमत: 2000 रुपये प्रति किलो</span>
-                </div>
-                <div class="btn-group">
-                    <a href="#read-more" class="btn read-more">अधिक जानें</a>
-                    <a href="https://wa.me/919546600280?text=हबीब%20शाही%20हलवा%20खरीदना%20चाहता%20हूँ" class="btn buy-now">अभी खरीदें</a>
-                </div>
-            </div>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.png" alt="Logo" width="40">
+                Habib Shifa Khana
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">होम</a></li>
+                <li><a href="#products" class="nav-link">उत्पाद</a></li>
+                <li><a href="#about" class="nav-link">हमारे बारे में</a></li>
+                <li><a href="#contact" class="nav-link">संपर्क</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
         </div>
+    </nav>
+  <!-- Product Grid -->
+    <div id="product-container" class="product-grid"></div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <h2>उत्पाद प्रबंधन</h2>
+        <form id="productForm">
+            <input type="text" placeholder="उत्पाद नाम" required>
+            <input type="text" placeholder="विवरण" required>
+            <input type="number" placeholder="मूल कीमत" required>
+            <input type="number" placeholder="छूट के बाद कीमत" required>
+            <input type="url" placeholder="अधिक जानें लिंक" required>
+            <input type="text" placeholder="WhatsApp संदेश" required>
+            <input type="url" placeholder="छवि URL" required>
+            <div class="form-buttons">
+                <button type="submit">उत्पाद जोड़ें</button>
+                <button type="button" onclick="resetProducts()">सभी हटाएं</button>
+            </div>
+        </form>
     </div>
-<!-- Floating Icons -->
+    <!-- Floating Icons -->
     <div class="float-icons">
-        <a href="https://t.me/shifa_ayurveda" 
+        <a href="https://t.me/JadiButiseIlaaj" 
            class="float-icon telegram-float"
            target="_blank"
            title="Join Telegram Channel"
@@ -634,7 +535,7 @@
             </svg>
         </a>
 
-        <a href="https://whatsapp.com/channel/0029Vb0mXus0VycJ3jcaKi0N" 
+        <a href="https://whatsapp.com/channel/0029Va9ItL94dTnPE9U3Hi0t" 
            class="float-icon whatsapp-float"
            target="_blank"
            title="Chat on WhatsApp"
@@ -647,9 +548,9 @@
 
     <div class="container" id="about">
         <div class="about-section">
-            <h3>हमारी सेवाएं / Our Services</h3>
+            <h3>💠 Natural Treatments Available💠</h3>
     <div class="service-description">
-        <p>प्रामाणिक आयुर्वेदिक समाधान | Authentic Ayurvedic Solutions</p>
+        <p>सेक्स व टाइमिंग का मुकम्मल ईलाज, बालो का झड़ना मात्र 10 दिन में बंद, नशा छुड़ाए कैसा भी नशा हो, सफेद दाग जड़ से खत्म, बांझपन का सफल इलाज, शुक्राणु बढ़ाए एक माह में। लिकोरिया, गठिया, जोड़ों का दर्द, चर्म रोग, डाईबीटीज, बवासीर तथा पेट संबंधित सभी बीमारियाँ, बवासीर, रसोली, बाँझपन, नामर्दी और सभी सेक्सुअल समस्याओं का सफल आयुर्वेदिक इलाज किया जाता है। </p>
         <ul class="service-list">
             <li>✅ पुरुष एवं महिला स्वास्थ्य विशेषज्ञता</li>
             <li>✅ 25+ वर्षों का पारंपरिक अनुभव</li>
@@ -661,7 +562,10 @@
         "Power of Nature, Validation of Science"</p>
         </div>
     </div>
-
+ <!-- Galery 01 -->
+            <div class="galery">
+                <img src="galery01.JPEG" alt="Galery" class="galery-image">
+                            </div>
      <footer class="footer">
         <div class="footer-content">
             <!-- Section 1: Footer Menu -->
@@ -679,11 +583,11 @@
             <div class="footer-section">
                 <h3>संपर्क जानकारी</h3>
                 <div class="contact" id="contact-info">
-                    <p><a href="https://wa.me/919546600280?text=Hi" class="btn buy-now">हकीम: मोहम्मद फैयाज़</a>
+                    <p><a href="https://wa.me/919758264390?text=Hi" class="btn buy-now">हकीम: हबीबूल्लाह शम्सी अल-कासमी</a>
        </p>
-                    <p><i class="fas fa-map-marker-alt"></i> पश्चिम चम्पारण, बेतिया, बिहार</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mansha tola, Near Hero Agency, West Champaran, Bettiah, Bihar 845438</p>
                     <p><i class="far fa-clock"></i>9:00 AM - 9:00 PM</p>
-                    <p><i class="far fa-envelope"></i> Email: amrcom097@gmail.com</p>
+                    <p><i class="far fa-envelope"></i> Email: herbalhealthcare97@gmail.com</p>
                 </div>
             </div>
 
@@ -691,19 +595,19 @@
             <div class="footer-section">
                 <h3>हमें फॉलो करें</h3>
                 <div class="social-links">
-                    <a href="https://whatsapp.com/channel/0029Vb0mXus0VycJ3jcaKi0N" class="social-link">
+                    <a href="https://whatsapp.com/channel/0029Va9ItL94dTnPE9U3Hi0t" class="social-link">
                         <i class="fab fa-whatsapp fa-lg"></i>
                         <span>WhatsApp</span>
                     </a>
-                    <a href="https://t.me/shifa_ayurveda" class="social-link">
+                    <a href="https://t.me/JadiButiseIlaaj" class="social-link">
                         <i class="fab fa-telegram fa-lg"></i>
                         <span>Telegram</span>
                     </a>
-                    <a href="https://www.instagram.com/shifa_ayurvedaa" class="social-link">
-                        <i class="fab fa-instagram fa-lg"></i>
-                        <span>Instagram</span>
+                    <a href="https://www.facebook.com/share/1PL3T5pj2z/" class="social-link">
+                        <i class="fab fa-facebook fa-lg"></i>
+                        <span>Facebook</span>
                     </a>
-                    <a href="#" class="social-link">
+                    <a href="https://youtube.com/@alhikmatherballabhabibshifakha?si=Na8nsX-kc5mmQGgU" class="social-link">
                         <i class="fab fa-youtube fa-lg"></i>
                         <span>YouTube</span>
                     </a>
@@ -711,52 +615,129 @@
             </div>
         </div>
 <div class="copyright">
-    <p>© <span id="current-year"></span> Shifa Ayurveda 
+    <p>© <span id="current-year"></span> Herbal Health Care Habib Shifa Khana 
        <br class="mobile-break">
  Designed with
 <a href="https://wa.me/917296071384?text=I%20want%20to%20make%20a%20website" class="btn buy-now">Manjoor Alam</a>
        </p>
 </div>
     </footer>
-
     <script>
-        // Mobile menu functionality
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
+        // Product Management System
+        const WHATSAPP_NUMBER = '919758264390'; // Centralized configuration
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        const urlParams = new URLSearchParams(window.location.search);
+        const isAdmin = urlParams.has('admin');
+
+        // Initialize Admin Mode
+        function initAdmin() {
+            if(isAdmin) {
+                document.getElementById('adminPanel').classList.add('active');
+                document.body.classList.add('admin-mode');
+            }
         }
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+        // Render Products
+        function renderProducts() {
+            const container = document.getElementById('product-container');
+            container.innerHTML = '';
+            container.className = product-grid${isAdmin ? ' admin-mode' : ''};
 
-        // Active menu highlight on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav a');
-            
-            sections.forEach(sec => {
-                const top = window.scrollY;
-                const offset = sec.offsetTop - 100;
-                const height = sec.offsetHeight;
-                const id = sec.getAttribute('id');
-
-                if (top >= offset && top < offset + height) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href').includes(id)) {
-                            link.classList.add('active');
+            products.forEach((product, index) => {
+                container.innerHTML += `
+                    <div class="product-card">
+                        ${isAdmin ? 
+                            <button class="delete-btn" onclick="deleteProduct(${index})">🗑️</button> : 
+                            ''
                         }
-                    });
-                }
+                        <img src="${product.image}" 
+                             class="product-image" 
+                             alt="${product.title}"
+                             onerror="this.src='placeholder.jpg'">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p>${product.description}</p>
+                        <div class="price">
+                            <span class="original-price">असली कीमत: ₹${product.originalPrice}</span><br>
+                            <span class="discounted-price">डिस्काउंट के बाद: ₹${product.discountedPrice}</span>
+                        </div>
+                        <div class="btn-group">
+                            <a href="${product.readMoreLink}" class="btn read-more">अधिक जानें</a>
+                            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(product.whatsappMessage)}" 
+                               class="btn buy-now">अभी खरीदें</a>
+                        </div>
+                    </div>
+                `;
             });
+        }
+
+        // Product Management Functions
+        function deleteProduct(index) {
+            if(confirm('क्या आप वाकई इस उत्पाद को हटाना चाहते हैं?')) {
+                products.splice(index, 1);
+                localStorage.setItem('products', JSON.stringify(products));
+                renderProducts();
+            }
+        }
+
+        function resetProducts() {
+            if(confirm('क्या आप सभी उत्पादों को रीसेट करना चाहते हैं?')) {
+                localStorage.removeItem('products');
+                products = [];
+                renderProducts();
+            }
+        }
+
+        // Form Handling
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            try {
+                const newProduct = {
+                    title: formData.get('title'),
+                    description: formData.get('description'),
+                    originalPrice: formData.get('originalPrice'),
+                    discountedPrice: formData.get('discountedPrice'),
+                    readMoreLink: formData.get('readMoreLink'),
+                    whatsappMessage: formData.get('whatsappMessage'),
+                    image: formData.get('image')
+                };
+
+                if(!newProduct.image.startsWith('http')) {
+                    throw new Error('कृपया मान्य छवि URL दर्ज करें');
+                }
+
+                products.push(newProduct);
+                localStorage.setItem('products', JSON.stringify(products));
+                renderProducts();
+                this.reset();
+
+            } catch (error) {
+                alert(त्रुटि: ${error.message});
+                console.error('Form Error:', error);
+            }
         });
-    </script>
+
+        // Initialize
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        initAdmin();
+        renderProducts();
+
+    // Mobile Menu Functionality
+    function toggleMenu() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+    }
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 <script>
     // Auto-update year
     document.getElementById('current-year').textContent = new Date().getFullYear();
